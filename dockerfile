@@ -1,12 +1,11 @@
 FROM node:20-alpine
+
 WORKDIR /usr/src/app
 
-# copy package.json then install
-COPY package.json ./
+# Clone repo directly
+RUN apk add --no-cache git \
+    && git clone https://github.com/<your-username>/<your-repo>.git .
+
 RUN npm install --production
-
-# copy app
-COPY app.js ./
-
 EXPOSE 3000
 CMD ["npm", "start"]
