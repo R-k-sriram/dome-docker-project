@@ -3,8 +3,10 @@ FROM node:20-alpine
 WORKDIR /usr/src/app
 
 # Clone repo directly
-RUN apk add --no-cache git \
-    && git clone https://github.com/<your-username>/<your-repo>.git .
+# RUN apk add --no-cache git \
+#     && git clone https://github.com/<your-username>/<your-repo>.git .
+
+COPY . .
 
 RUN npm install --production
 EXPOSE 3000
