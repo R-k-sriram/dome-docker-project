@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "my-node-app:${BUILD_NUMBER}"
-        DOCKER_HUB_REPO = "rksriram/my-node-app:${BUILD_NUMBER}"
+        DOCKER_HUB_REPO = "your-dockerhub-username/my-node-app:${BUILD_NUMBER}"
     }
 
     stages {
